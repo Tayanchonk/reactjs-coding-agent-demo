@@ -5,6 +5,7 @@ import ProductList from './components/Product/ProductList';
 import ProductForm from './components/Product/ProductForm';
 import ProductDetails from './components/Product/ProductDetails';
 import Notification from './components/UI/Notification';
+import LoginPage from './components/Auth/LoginPage';
 import { useAppDispatch, useAppSelector } from './hooks/redux';
 import {
   fetchProducts,
@@ -16,12 +17,14 @@ import {
   setSortOptions,
   clearError,
 } from './store/productsSlice';
+import { logout } from './store/authSlice';
 import type { Product, CreateProductRequest, UpdateProductRequest, ProductFilters as ProductFiltersType, ProductSortOptions } from './types';
 
 // Main App Content Component
 const AppContent: React.FC = () => {
   const dispatch = useAppDispatch();
   const { products, loading, selectedProduct } = useAppSelector(state => state.products);
+  const { isAuthenticated, user } = useAppSelector(state => state.auth);
 
   const [showForm, setShowForm] = useState(false);
   const [editingProduct, setEditingProduct] = useState<Product | null>(null);
@@ -31,10 +34,12 @@ const AppContent: React.FC = () => {
     type: 'success' | 'error' | 'info';
   } | null>(null);
 
-  // Load products on mount
+  // Load products on mount - only when authenticated
   useEffect(() => {
-    dispatch(fetchProducts());
-  }, [dispatch]);
+    if (isAuthenticated) {
+      dispatch(fetchProducts());
+    }
+  }, [dispatch, isAuthenticated]);
 
   // Show error notifications
   useEffect(() => {
@@ -45,6 +50,11 @@ const AppContent: React.FC = () => {
       });
     }
   }, [loading.error]);
+
+  // Show login page if not authenticated
+  if (!isAuthenticated) {
+    return <LoginPage />;
+  }
 
   const handleCreateProduct = async (productData: CreateProductRequest) => {
     try {
@@ -127,6 +137,10 @@ const AppContent: React.FC = () => {
     dispatch(clearError());
   };
 
+  const handleLogout = () => {
+    dispatch(logout());
+  };
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
@@ -135,14 +149,22 @@ const AppContent: React.FC = () => {
           <div className="flex justify-between items-center py-6">
             <div>
               <h1 className="text-3xl font-bold text-gray-900">Product Management</h1>
-              <p className="text-gray-600 mt-1">Manage your product inventory with ease</p>
+              <p className="text-gray-600 mt-1">Welcome back, {user?.username}!</p>
             </div>
-            <button
-              onClick={() => setShowForm(true)}
-              className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium"
-            >
-              Add New Product
-            </button>
+            <div className="flex items-center space-x-4">
+              <button
+                onClick={() => setShowForm(true)}
+                className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium"
+              >
+                Add New Product
+              </button>
+              <button
+                onClick={handleLogout}
+                className="bg-gray-600 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition-colors font-medium"
+              >
+                Logout
+              </button>
+            </div>
           </div>
         </div>
       </header>

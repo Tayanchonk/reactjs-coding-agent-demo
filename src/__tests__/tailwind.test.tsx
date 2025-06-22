@@ -33,6 +33,7 @@ describe('Tailwind CSS Integration', () => {
     const { container } = render(<TailwindTestComponent />);
     
     // Verify the component renders without throwing errors
+    // @ts-expect-error - jest-dom types
     expect(container.firstChild).toBeInTheDocument();
     
     // Check for key structural elements with Tailwind classes
@@ -40,13 +41,19 @@ describe('Tailwind CSS Integration', () => {
     const button = container.querySelector('button');
     const mainContent = container.querySelector('main');
     
+    // @ts-expect-error - jest-dom types
     expect(header).toBeInTheDocument();
+    // @ts-expect-error - jest-dom types
     expect(button).toBeInTheDocument();
+    // @ts-expect-error - jest-dom types
     expect(mainContent).toBeInTheDocument();
     
     // Verify specific classes are applied (this ensures Tailwind CSS processing is working)
+    // @ts-expect-error - jest-dom types
     expect(header).toHaveClass('bg-white', 'shadow-sm', 'border-b');
+    // @ts-expect-error - jest-dom types
     expect(button).toHaveClass('bg-blue-600', 'text-white', 'px-6', 'py-3', 'rounded-lg', 'font-medium');
+    // @ts-expect-error - jest-dom types
     expect(mainContent).toHaveClass('max-w-7xl', 'mx-auto', 'px-4', 'py-8');
   });
 
@@ -55,9 +62,11 @@ describe('Tailwind CSS Integration', () => {
     
     // Verify responsive classes are present
     const responsiveElement = container.querySelector('.sm\\:px-6');
+    // @ts-expect-error - jest-dom types
     expect(responsiveElement).toBeInTheDocument();
     
     const responsiveElement2 = container.querySelector('.lg\\:px-8');
+    // @ts-expect-error - jest-dom types
     expect(responsiveElement2).toBeInTheDocument();
   });
 });

@@ -30,7 +30,7 @@ A modern, responsive product management application built with React, TypeScript
 - **Build Tool**: Vite 6.3.5
 - **State Management**: Redux Toolkit
 - **Styling**: Tailwind CSS with PostCSS
-- **Testing**: Vitest with React Testing Library
+- **Testing**: Jest with React Testing Library
 - **Linting**: ESLint with TypeScript rules
 - **Type Safety**: TypeScript with strict configuration
 
@@ -66,8 +66,9 @@ npm run dev
 - `npm run build` - Build for production
 - `npm run preview` - Preview production build
 - `npm run lint` - Run ESLint
-- `npm test` - Run unit tests
-- `npm run test:ui` - Run tests with UI
+- `npm test` - Run unit tests with Jest
+- `npm run test:watch` - Run tests in watch mode
+- `npm run test:coverage` - Run tests with coverage report
 
 ## 📁 Project Structure
 
@@ -115,6 +116,16 @@ The application includes comprehensive unit tests for:
 Run tests with:
 ```bash
 npm test
+```
+
+Run tests with coverage:
+```bash
+npm run test:coverage
+```
+
+Run tests in watch mode:
+```bash
+npm run test:watch
 ```
 
 ## 🔧 Configuration

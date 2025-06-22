@@ -27,6 +27,10 @@ export default {
         allowSyntheticDefaultImports: true,
         jsx: 'react-jsx',
         skipLibCheck: true,
+        noImplicitAny: false,
+      },
+      diagnostics: {
+        ignoreCodes: [2339], // Ignore "Property does not exist" errors for jest-dom matchers
       },
     }],
   },

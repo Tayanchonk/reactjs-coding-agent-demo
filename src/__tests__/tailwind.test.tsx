@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-// Jest globals are available automatically
+import { describe, it, expect } from 'vitest';
 
 // Simple component that uses common Tailwind classes to verify they are working
 const TailwindTestComponent: React.FC = () => {

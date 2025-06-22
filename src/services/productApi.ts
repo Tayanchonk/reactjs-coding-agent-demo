@@ -71,7 +71,7 @@ export class ProductApiService {
         data: [...products],
         message: 'Products fetched successfully',
       };
-    } catch (error) {
+    } catch {
       return {
         data: [],
         error: 'Failed to fetch products',
@@ -89,7 +89,7 @@ export class ProductApiService {
         data: product || null,
         message: product ? 'Product found' : 'Product not found',
       };
-    } catch (error) {
+    } catch {
       return {
         data: null,
         error: 'Failed to fetch product',
@@ -116,7 +116,7 @@ export class ProductApiService {
         data: newProduct,
         message: 'Product created successfully',
       };
-    } catch (error) {
+    } catch {
       return {
         data: {} as Product,
         error: 'Failed to create product',
@@ -150,7 +150,7 @@ export class ProductApiService {
         data: updatedProduct,
         message: 'Product updated successfully',
       };
-    } catch (error) {
+    } catch {
       return {
         data: {} as Product,
         error: 'Failed to update product',
@@ -178,7 +178,7 @@ export class ProductApiService {
         data: true,
         message: 'Product deleted successfully',
       };
-    } catch (error) {
+    } catch {
       return {
         data: false,
         error: 'Failed to delete product',

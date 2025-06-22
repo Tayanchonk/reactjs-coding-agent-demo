@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import type { ProductFilters, ProductSortOptions, Product } from '../../types';
 import { getUniqueCategories } from '../../utils/helpers';
 
-interface ProductFiltersProps {
+interface ProductFiltersComponentProps {
   products: Product[];
   filters: ProductFilters;
   sortOptions: ProductSortOptions;
@@ -10,7 +10,7 @@ interface ProductFiltersProps {
   onSortChange: (sortOptions: ProductSortOptions) => void;
 }
 
-const ProductFilters: React.FC<ProductFiltersProps> = ({
+const ProductFiltersComponent: React.FC<ProductFiltersComponentProps> = ({
   products,
   filters,
   sortOptions,
@@ -163,4 +163,4 @@ const ProductFilters: React.FC<ProductFiltersProps> = ({
   );
 };
 
-export default ProductFilters;
+export default ProductFiltersComponent;

@@ -18,18 +18,13 @@ export const formatDate = (dateString: string): string => {
 };
 
 // Get unique categories from products
-export const getUniqueCategories = (products: any[]): string[] => {
+export const getUniqueCategories = (products: Array<{ category: string }>): string[] => {
   const categories = products.map(product => product.category);
   return [...new Set(categories)].sort();
 };
 
 // Validate product data
-export interface ValidationErrors {
-  name?: string;
-  description?: string;
-  price?: string;
-  category?: string;
-}
+import type { ValidationErrors } from '../types';
 
 export const validateProduct = (data: {
   name: string;

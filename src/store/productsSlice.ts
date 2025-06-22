@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk, type PayloadAction } from '@reduxjs/toolkit';
 import type { Product, CreateProductRequest, UpdateProductRequest, LoadingState, ProductFilters, ProductSortOptions } from '../types';
 import { ProductApiService } from '../services/productApi';
 

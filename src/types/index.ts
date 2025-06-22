@@ -42,3 +42,10 @@ export interface LoadingState {
   isLoading: boolean;
   error: string | null;
 }
+
+export interface ValidationErrors {
+  name?: string;
+  description?: string;
+  price?: string;
+  category?: string;
+}

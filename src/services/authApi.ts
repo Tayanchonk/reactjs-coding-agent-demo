@@ -50,7 +50,7 @@ export class AuthApiService {
     }
 
     return {
-      data: null as User,
+      data: null as unknown as User,
       error: 'Invalid verification code. Please try again.',
     };
   }

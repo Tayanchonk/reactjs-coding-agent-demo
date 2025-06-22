@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest';
+// Jest globals are available automatically
 import { formatCurrency, formatDate, getUniqueCategories, validateProduct } from '../utils/helpers';
 import type { Product } from '../types';
 

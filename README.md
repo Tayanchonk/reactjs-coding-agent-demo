@@ -30,7 +30,7 @@ A modern, responsive product management application built with React, TypeScript
 - **Build Tool**: Vite 6.3.5
 - **State Management**: Redux Toolkit
 - **Styling**: Tailwind CSS with PostCSS
-- **Testing**: Vitest with React Testing Library
+- **Testing**: Jest with React Testing Library
 - **Linting**: ESLint with TypeScript rules
 - **Type Safety**: TypeScript with strict configuration
 
@@ -66,8 +66,9 @@ npm run dev
 - `npm run build` - Build for production
 - `npm run preview` - Preview production build
 - `npm run lint` - Run ESLint
-- `npm test` - Run unit tests
-- `npm run test:ui` - Run tests with UI
+- `npm test` - Run unit tests with Jest
+- `npm run test:watch` - Run tests in watch mode
+- `npm run test:coverage` - Run tests and generate coverage reports
 
 ## 📁 Project Structure
 
@@ -106,16 +107,38 @@ src/
 
 ## 🧪 Testing
 
-The application includes comprehensive unit tests for:
+The application includes comprehensive unit tests using Jest and React Testing Library for:
 
 - **API Service**: Tests for all CRUD operations
-- **Utility Functions**: Tests for helper functions
+- **Utility Functions**: Tests for helper functions  
 - **React Components**: Tests for component rendering and behavior
+- **Tailwind CSS**: Tests for CSS framework integration
 
-Run tests with:
+### Running Tests
+
 ```bash
+# Run all tests
 npm test
+
+# Run tests in watch mode  
+npm run test:watch
+
+# Run tests with coverage report
+npm run test:coverage
 ```
+
+### Coverage Reports
+
+Test coverage reports are generated in the `coverage/` directory with:
+- **HTML Report**: Open `coverage/index.html` in your browser
+- **LCOV Report**: For CI/CD integration
+- **Text Summary**: Displayed in terminal
+
+Current coverage thresholds:
+- Statements: 23%
+- Branches: 15%  
+- Functions: 18%
+- Lines: 21%
 
 ## 🔧 Configuration
 

@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach } from 'vitest';
+// Jest globals are available automatically
 import { ProductApiService } from '../services/productApi';
 
 describe('ProductApiService', () => {

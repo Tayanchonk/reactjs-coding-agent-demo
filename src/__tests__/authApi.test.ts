@@ -1,10 +1,10 @@
-import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { describe, it, expect, jest, beforeEach } from '@jest/globals';
 import { AuthApiService } from '../services/authApi';
 
 describe('AuthApiService', () => {
   beforeEach(() => {
-    vi.clearAllTimers();
-    vi.useFakeTimers();
+    jest.clearAllTimers();
+    jest.useFakeTimers();
   });
 
   describe('validateCredentials', () => {
@@ -12,7 +12,7 @@ describe('AuthApiService', () => {
       const credentials = { username: 'admin', password: 'p@ssw0rd' };
       
       const responsePromise = AuthApiService.validateCredentials(credentials);
-      vi.advanceTimersByTime(800);
+      jest.advanceTimersByTime(800);
       const response = await responsePromise;
 
       expect(response.data).toBe(true);
@@ -24,7 +24,7 @@ describe('AuthApiService', () => {
       const credentials = { username: 'wrong', password: 'wrong' };
       
       const responsePromise = AuthApiService.validateCredentials(credentials);
-      vi.advanceTimersByTime(800);
+      jest.advanceTimersByTime(800);
       const response = await responsePromise;
 
       expect(response.data).toBe(false);
@@ -38,7 +38,7 @@ describe('AuthApiService', () => {
       const verification = { code: '864120' };
       
       const responsePromise = AuthApiService.verifyTwoFactor(verification);
-      vi.advanceTimersByTime(600);
+      jest.advanceTimersByTime(600);
       const response = await responsePromise;
 
       expect(response.data).toEqual({
@@ -53,7 +53,7 @@ describe('AuthApiService', () => {
       const verification = { code: '123456' };
       
       const responsePromise = AuthApiService.verifyTwoFactor(verification);
-      vi.advanceTimersByTime(600);
+      jest.advanceTimersByTime(600);
       const response = await responsePromise;
 
       expect(response.data).toBe(null);
@@ -65,7 +65,7 @@ describe('AuthApiService', () => {
   describe('logout', () => {
     it('should return success when logging out', async () => {
       const responsePromise = AuthApiService.logout();
-      vi.advanceTimersByTime(300);
+      jest.advanceTimersByTime(300);
       const response = await responsePromise;
 
       expect(response.data).toBe(true);

@@ -1,10 +1,10 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
-import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { describe, it, expect, jest, beforeEach } from '@jest/globals';
 import TwoFactorAuth from '../components/Auth/TwoFactorAuth';
 
 describe('TwoFactorAuth', () => {
-  const mockOnSubmit = vi.fn();
-  const mockOnBack = vi.fn();
+  const mockOnSubmit = jest.fn();
+  const mockOnBack = jest.fn();
   const defaultProps = {
     onSubmit: mockOnSubmit,
     onBack: mockOnBack,
@@ -13,7 +13,7 @@ describe('TwoFactorAuth', () => {
   };
 
   beforeEach(() => {
-    vi.clearAllMocks();
+    jest.clearAllMocks();
   });
 
   it('should render two-factor auth form with required elements', () => {

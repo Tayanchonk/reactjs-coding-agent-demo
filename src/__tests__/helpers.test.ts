@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect } from '@jest/globals';
 import { formatCurrency, formatDate, getUniqueCategories, validateProduct } from '../utils/helpers';
 import type { Product } from '../types';
 

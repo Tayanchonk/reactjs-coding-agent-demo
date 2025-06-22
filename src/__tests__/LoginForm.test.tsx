@@ -1,9 +1,9 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
-import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { describe, it, expect, jest, beforeEach } from '@jest/globals';
 import LoginForm from '../components/Auth/LoginForm';
 
 describe('LoginForm', () => {
-  const mockOnSubmit = vi.fn();
+  const mockOnSubmit = jest.fn();
   const defaultProps = {
     onSubmit: mockOnSubmit,
     isLoading: false,
@@ -11,7 +11,7 @@ describe('LoginForm', () => {
   };
 
   beforeEach(() => {
-    vi.clearAllMocks();
+    jest.clearAllMocks();
   });
 
   it('should render login form with all required fields', () => {

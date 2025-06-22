@@ -1,13 +1,12 @@
 import '@testing-library/jest-dom'
 
-// Extend Jest matchers for jest-dom
 declare global {
   namespace jest {
     interface Matchers<R> {
       toBeInTheDocument(): R;
       toHaveClass(...classNames: string[]): R;
       toBeDisabled(): R;
-      toHaveAttribute(attr: string, value?: string): R;
+      toHaveAttribute(attr: string, value?: unknown): R;
     }
   }
 }

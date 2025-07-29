@@ -1,0 +1,25 @@
+pipeline {
+    agent any
+    
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+        
+        stage('SonarQube Analysis') {
+            steps {
+                sh '''
+                docker run --rm \
+                  --network cicd-network \
+                  -v $(pwd):/usr/src \
+                  -e SONAR_HOST_URL="http://sonarqube:9000" \
+                  -e SONAR_LOGIN="admin" \
+                  -e SONAR_PASSWORD="admin" \
+                  sonarsource/sonar-scanner-cli
+                '''
+            }
+        }
+    }
+}

@@ -19,6 +19,7 @@ import {
 } from './store/productsSlice';
 import { logout } from './store/authSlice';
 import type { Product, CreateProductRequest, UpdateProductRequest, ProductFilters as ProductFiltersType, ProductSortOptions } from './types';
+import BuggyComponent from './buggy';
 
 // Main App Content Component
 const AppContent: React.FC = () => {
@@ -171,6 +172,7 @@ const AppContent: React.FC = () => {
 
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <BuggyComponent />
         <ProductList
           onEditProduct={handleEditProduct}
           onDeleteProduct={handleDeleteProduct}

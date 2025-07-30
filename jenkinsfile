@@ -14,6 +14,7 @@ pipeline {
                 docker run --rm \
                   --network cicd-network \
                   -v $(pwd):/usr/src \
+                  -w /usr/src \
                   -e SONAR_HOST_URL="http://sonarqube:9000" \
                   -e SONAR_LOGIN="admin" \
                   -e SONAR_PASSWORD="admin" \

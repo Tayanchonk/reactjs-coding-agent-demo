@@ -58,7 +58,6 @@ function unsafeSqlQuery(userId: string) {
 function unreachableCode() {
   return "Result";
   // This code will never run
-  console.log("This will never be logged");
 }
 
 // Code smell: Too many parameters

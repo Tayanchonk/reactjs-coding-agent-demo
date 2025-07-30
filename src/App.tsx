@@ -4,7 +4,9 @@ import { store } from './store';
 import ProductList from './components/Product/ProductList';
 import ProductForm from './components/Product/ProductForm';
 import ProductDetails from './components/Product/ProductDetails';
+import ProductSummary from './components/Product/ProductSummary';
 import Notification from './components/UI/Notification';
+import PriceDisplay, { SimplePriceDisplay } from './components/UI/PriceDisplay';
 import LoginPage from './components/Auth/LoginPage';
 import { useAppDispatch, useAppSelector } from './hooks/redux';
 import {
@@ -19,6 +21,7 @@ import {
 } from './store/productsSlice';
 import { logout } from './store/authSlice';
 import type { Product, CreateProductRequest, UpdateProductRequest, ProductFilters as ProductFiltersType, ProductSortOptions } from './types';
+import { formatProductForDisplay, generateProductSummary } from './utils/formatting';
 // import BuggyComponent from './buggy';
 
 // Main App Content Component

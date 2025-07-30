@@ -4,23 +4,61 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                checkout scm
+                git 'https://github.com/Tayanchonk/reactjs-coding-agent-demo.git'
+            }
+        }
+        
+        stage('Install Dependencies') {
+            steps {
+                sh '''
+                echo "Checking for Node.js and NPM..."
+                command -v node && echo Node.js and NPM found.
+                node --version
+                command -v npm
+                npm --version
+                npm install
+                '''
             }
         }
         
         stage('SonarQube Analysis') {
             steps {
-                sh '''
-                docker run --rm \
-                  --network cicd-network \
-                  -v $(pwd):/usr/src \
-                  -w /usr/src \
-                  -e SONAR_HOST_URL="http://sonarqube:9000" \
-                  -e SONAR_LOGIN="admin" \
-                  -e SONAR_PASSWORD="admin" \
-                  sonarsource/sonar-scanner-cli
-                '''
+                withSonarQubeEnv('SonarQube') {
+                    script {
+                        def scannerHome = tool 'SonarScanner'
+                        sh """
+                        ${scannerHome}/bin/sonar-scanner \
+                        -Dsonar.projectKey=reactjs-coding-agent-demo \
+                        -Dsonar.projectName=reactjs-coding-agent-demo \
+                        -Dsonar.sources=src \
+                        -Dsonar.projectBaseDir=${WORKSPACE} \
+                        -Dsonar.test.inclusions=**/*.test.ts,**/*.test.tsx \
+                        -Dsonar.typescript.lcov.reportPaths=coverage/lcov.info \
+                        -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
+                        """
+                    }
+                }
             }
+        }
+        
+        stage('Quality Gate') {
+            steps {
+                timeout(time: 1, unit: 'HOURS') {
+                    waitForQualityGate abortPipeline: true
+                }
+            }
+        }
+        
+        stage('Build') {
+            steps {
+                sh 'npm run build'
+            }
+        }
+    }
+    
+    post {
+        always {
+            cleanWs()
         }
     }
 }

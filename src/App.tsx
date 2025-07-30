@@ -19,7 +19,7 @@ import {
 } from './store/productsSlice';
 import { logout } from './store/authSlice';
 import type { Product, CreateProductRequest, UpdateProductRequest, ProductFilters as ProductFiltersType, ProductSortOptions } from './types';
-import BuggyComponent from './buggy';
+// import BuggyComponent from './buggy';
 
 // Main App Content Component
 const AppContent: React.FC = () => {
@@ -37,10 +37,23 @@ const AppContent: React.FC = () => {
 
   // Load products on mount - only when authenticated
   useEffect(() => {
+    // SonarQube issue: ไม่ระบุ dependencies ที่จำเป็น (user, dispatch, isAuthenticated)
     if (isAuthenticated) {
       dispatch(fetchProducts());
+      console.log('Loading products for:', user?.username); // SonarQube issue: ใช้ user แต่ไม่ได้เพิ่มในรายการ dependencies
     }
-  }, [dispatch, isAuthenticated]);
+    
+    // SonarQube issue: memory leak (ไม่มีการ cleanup)
+    const interval = setInterval(() => {
+      console.log('Checking for product updates...');
+    }, 5000);
+    
+    // SonarQube issue: cleanup ที่ไม่สมบูรณ์ (ไม่ได้ clear interval)
+    return () => {
+      // ใช้ interval เพื่อไม่ให้ TypeScript error
+      console.log("Component unmounted, but interval not cleared:", interval);
+    };
+  }, []); // SonarQube issue: ละเว้น dependencies ทั้งหมด
 
   // Show error notifications
   useEffect(() => {
@@ -172,7 +185,7 @@ const AppContent: React.FC = () => {
 
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <BuggyComponent />
+        {/* <BuggyComponent /> */}
         <ProductList
           onEditProduct={handleEditProduct}
           onDeleteProduct={handleDeleteProduct}

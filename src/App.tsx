@@ -33,11 +33,8 @@ import UserInRole from "./pages/Settings/UsermanageMent/RoleAndPermission/userIn
 import Purpose from "./pages/consent/Purpose";
 import StandardPurpose from "./pages/consent/Purpose/StandardPurpose";
 import PreferencePurpose from "./pages/consent/Purpose/PreferencePurpose";
-import StandardPurposeForm from "./pages/consent/Purpose/StandardPurpose/StandardPurposeForm";
 import PreferencePurposeForm from "./pages/consent/Purpose/PreferencePurpose/PreferencePurposeForm";
 import ScheduledItems from "./pages/Settings/ConsentSettings/Content/ScheduledItems";
-// import Integrations from "./pages/Settings/ConsentInterface/Integrations";
-import ConsentInterface from "./pages/consent/ConsentInterface";
 
 import PrivacyNoticesManangeMent from "./pages/Privacy/PrivacyNoticesManagement/PrivacyNoticesManagement";
 import PrivacyNotices from "./pages/Privacy/PrivacyNotices";

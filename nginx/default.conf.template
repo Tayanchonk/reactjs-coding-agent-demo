@@ -1,0 +1,51 @@
+server {
+  listen 3001;
+  server_name localhost;
+
+  root /app;
+  index index.html;
+
+  # Serve React SPA
+  location / {
+    try_files $uri $uri/ /index.html;
+  }
+
+  # /api -> ${API_GATEWAY_URL}
+  location /api/ {
+    proxy_pass ${API_GATEWAY_URL}/;
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto $scheme;
+  }
+
+  # /authenticationService -> ${API_GATEWAY_URL}/api/v1
+  location /authenticationService/ {
+    proxy_pass ${API_GATEWAY_URL}/api/v1/;
+    proxy_ssl_verify off;  # ปิด verify cert ถ้าใช้ self-signed
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto $scheme;
+  }
+
+  # /configurationService -> ${API_GATEWAY_URL}/configuration
+  location /configurationService/ {
+    proxy_pass ${API_GATEWAY_URL}/configuration/;
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto $scheme;
+  }
+
+  # /customerDataService -> ${API_GATEWAY_URL}/consent
+  location /customerDataService/ {
+    proxy_pass ${API_GATEWAY_URL}/consent/;
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto $scheme;
+  }
+
+  error_page 404 /index.html;
+}

@@ -1,0 +1,12 @@
+.success-background {
+    background-color: #F1F9F6;
+}
+.error-background {
+    background-color: #FDF0F0;
+}
+.info-background {
+    background-color: #E8F3FF;
+}
+.warning-background {
+    background-color: #FDF6E7;
+}

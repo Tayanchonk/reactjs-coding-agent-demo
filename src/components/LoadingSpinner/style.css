@@ -1,0 +1,21 @@
+.twoColor>div>div :first-child {
+    background-color: #3758F9;
+}
+
+@keyframes slowBlink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.2;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.slow-blink {
+    animation: slowBlink 3s infinite;
+}

@@ -1,0 +1,14 @@
+.color-pick {
+    width:25px;
+      height:25px;
+      overflow: hidden;
+      border-radius:100%;
+      margin-top:2px
+  }
+  input[type='color'] {
+      width:100%;
+      height:100%;
+      background: #FFFFFF 0% 0% no-repeat padding-box;
+      box-shadow: 0px 3px 6px #0000001A;
+      transform: scale(2.5);
+  }

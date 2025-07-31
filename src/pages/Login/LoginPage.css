@@ -1,0 +1,102 @@
+.bg-image {
+    background-image: url('../../assets/images/MCSADesignSystems.jpg');
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    position: relative;
+
+}
+
+.maskgroup {
+
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 10%;
+
+    z-index: 1;
+}
+
+.group {
+    width: 80%;
+    height: 75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 25%;
+    left: 0;
+    z-index: 2;
+}
+
+.bg-from {
+    background-color: #fff;
+
+    padding: 0px;
+    width: 100%;
+    height: 100vh;
+
+
+    z-index: 1;
+}
+
+.text-login {
+
+    width: 500px;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 20%;
+    left: 10%;
+    z-index: 2;
+    color: #fff;
+}
+
+.stmcsa {
+    font-size: 48px;
+    font-weight: 800;
+    color: #fff;
+}
+
+.metro {
+    font-size: 30px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.easily {
+    font-size: 14px;
+    font-weight: 100;
+    color: #D9D9D9;
+}
+
+.powered {
+    margin-top: 10px;
+    font-size: 12px;
+    font-weight: 100;
+    color: #D9D9D9;
+}
+
+.logowhite {
+    width: 40px;
+    height: 30px;
+    margin-bottom: 10px;
+}
+
+.logoicon {
+    width: 3rem;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.logoSuperAppPDPA {
+    width: 29rem;
+    height: auto;
+    margin-bottom: 10px;
+}

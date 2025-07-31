@@ -1,0 +1,13 @@
+<svg width="194" height="100" viewBox="0 0 194 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="194" height="100" rx="8" fill="white"/>
+<rect x="64" y="73.2695" width="25.9454" height="11.4773" rx="2" fill="#3758F9"/>
+<rect opacity="0.5" x="64" y="59.333" width="86.5971" height="7.78815" rx="2" fill="#E3E8EC"/>
+<rect opacity="0.5" x="64" y="43.7568" width="55.5974" height="7.78815" rx="2" fill="#E3E8EC"/>
+<rect opacity="0.5" x="64" y="29" width="42.1192" height="7.78815" rx="2" fill="#E3E8EC"/>
+<path d="M0 8C0 3.58172 3.58172 0 8 0H54V100H8C3.58172 100 0 96.4183 0 92V8Z" fill="#463DE1"/>
+<path d="M0 8C0 3.58172 3.58172 0 8 0V100C3.58172 100 0 96.4183 0 92V8Z" fill="#1005C0"/>
+<rect opacity="0.5" x="15" y="10" width="29" height="4" rx="2" fill="#261EB0"/>
+<rect opacity="0.5" x="15" y="18" width="29" height="4" rx="2" fill="#261EB0"/>
+<rect opacity="0.5" x="15" y="25" width="29" height="4" rx="2" fill="#261EB0"/>
+<path d="M54 0H186C190.418 0 194 3.58172 194 8V10H54V0Z" fill="#282626"/>
+</svg>

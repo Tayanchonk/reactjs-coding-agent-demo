@@ -1,0 +1,78 @@
+
+    {
+      "id": "4a36c412-276d-4b70-a75d-d1203922a9bb",
+      "orgName": "PDPA Team Main",
+      "nameUser": "1fea7e9e-6ba9-4542-ad82-fcc66bb544b1ปปปป",
+      "bgColor": "#3758F9",
+      "textColor": "#FFFFFF",
+      "organizationChildRelationship": [
+        {
+          "id": "bfd3df2a-a624-4435-8313-9bcc0335a6ae",
+          "orgName": "PDPA Team1",
+          "nameUser": "1fea7e9e-6ba9-4542-ad82-fcc66bb544b1",
+          "bgColor": null,
+          "textColor": null,
+          "organizationChildRelationship": [
+            {
+              "id": "0b143df1-0110-424f-8566-27b343ca275a",
+              "orgName": "PDPA Team1-1",
+              "nameUser": "1fea7e9e-6ba9-4542-ad82-fcc66bb544b1",
+              "bgColor": null,
+              "textColor": null,
+              "organizationChildRelationship": [
+                {
+                  "id": "4f1ff929-276f-4021-b962-35dfa40d2fb2",
+                  "orgName": "PDPA Team1-1-1",
+                  "nameUser": "1fea7e9e-6ba9-4542-ad82-fcc66bb544b1",
+                  "bgColor": null,
+                  "textColor": null,
+                  "organizationChildRelationship": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "c057976e-2e66-4764-9332-35192067835e",
+          "orgName": "PDPA Team2",
+          "nameUser": "1fea7e9e-6ba9-4542-ad82-fcc66bb544b1",
+          "bgColor": null,
+          "textColor": null,
+          "organizationChildRelationship": [
+            {
+              "id": "31e1fbce-47b8-4210-9be0-b7e34a58a778",
+              "orgName": "PDPA Team2-1",
+              "nameUser": "1fea7e9e-6ba9-4542-ad82-fcc66bb544b1",
+              "bgColor": null,
+              "textColor": null,
+              "organizationChildRelationship": []
+            },
+            {
+              "id": "0850bd0e-4c19-483d-8889-4d8ad1d77014",
+              "orgName": "PDPA Team3-1",
+              "nameUser": "1fea7e9e-6ba9-4542-ad82-fcc66bb544b1",
+              "bgColor": null,
+              "textColor": null,
+              "organizationChildRelationship": []
+            }
+          ]
+        },
+        {
+          "id": "d3b478a6-f9cd-4ef4-9998-6f9b5a9daf55",
+          "orgName": "PDPA Team3",
+          "nameUser": "1fea7e9e-6ba9-4542-ad82-fcc66bb544b1",
+          "bgColor": null,
+          "textColor": null,
+          "organizationChildRelationship": [
+            {
+              "id": "232c71c1-5ce4-41bb-b55b-7b3b1a152bbf",
+              "orgName": "PDPA Team3-2",
+              "nameUser": "1fea7e9e-6ba9-4542-ad82-fcc66bb544b1",
+              "bgColor": null,
+              "textColor": null,
+              "organizationChildRelationship": []
+            }
+          ]
+        }
+      ]
+    }

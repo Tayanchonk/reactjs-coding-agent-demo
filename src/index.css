@@ -1,32 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities {
-  .animate-blob {
-    animation: blob 7s infinite;
-  }
-
-  .animation-delay-2000 {
-    animation-delay: 2s;
-  }
-
-  .animation-delay-4000 {
-    animation-delay: 4s;
-  }
+:root {
+  --primary: #3758f9;
+  --danger: #e60e00;
+  --secondary: #111928;
+}
+.ql-align-right {
+  text-align: right !important;
+}
+.ql-align-center {
+  text-align: center !important;
+}
+.ql-align-left {
+  text-align: left !important;
+}
+body {
+  font-family: "IBM Plex Sans Thai" !important;
+}
+.background-navy {
+  background-color: #121721;
 }
 
-@keyframes blob {
-  0% {
-    transform: translate(0px, 0px) scale(1);
+@font-face {
+  font-family: "IBM Plex Sans Thai";
+  src: url("../src/assets/fonts/IBMPlexSansThai-Regular.ttf") format("truetype");
+  /* font-weight: normal;
+  font-style: normal; */
+}
+
+@font-face {
+  font-family: "IBM Plex Sans Thai Thin";
+  src: url("../src/assets/fonts/IBMPlexSansThai-Thin.ttf") format("truetype");
+  /* font-weight: 100;
+  font-style: normal; */
+}
+
+@font-face {
+  font-family: "IBM Plex Sans Thai Light";
+  src: url("../src/assets/fonts/IBMPlexSansThai-Light.ttf") format("truetype");
+  /* font-weight: 200;
+  font-style: normal; */
+}
+
+@font-face {
+  font-family: "IBM Plex Sans Thai Bold";
+  src: url("../src/assets/fonts/IBMPlexSansThai-SemiBold.ttf")
+    format("truetype");
+  /* font-weight: 200; */
+  /* font-style: normal; */
+}
+
+@font-face {
+  font-family: "IBM Plex Sans Thai";
+  src: url("../src/assets/fonts/IBMPlexSansThai-Medium.ttf") format("truetype");
+  font-weight: 500; /* ใช้ตัวเลขแทนชื่อ */
+  font-style: normal; /* ปรับจาก medium เป็น normal */
+}
+
+@font-face {
+  font-family: "IBM Plex Sans Thai Regular";
+  src: url("../src/assets/fonts/IBMPlexSansThai-Regular.ttf") format("truetype");
+  /* font-weight: 200; */
+  /* font-style: normal; */
+}
+
+.font-bold {
+  font-family: "IBM Plex Sans Thai Bold" !important;
+  font-weight: 600 !important;
+}
+.font-thin {
+  font-family: "IBM Plex Sans Thai Thin" !important;
+}
+.font-light {
+  font-family: "IBM Plex Sans Thai Light" !important;
+}
+.font-medium {
+  font-family: "IBM Plex Sans Thai" !important;
+  font-weight: 500;
+  font-style: normal;
+  /* font-weight: 500; */
+}
+.font-regular {
+  font-family: "IBM Plex Sans Thai Regular" !important;
+}
+h1 {
+  font-family: "IBM Plex Sans Thai";
+}
+
+.font-semibold {
+  font-family: "IBM Plex Sans Thai" !important;
+  font-weight: 500 !important;
+  font-style: normal !important;
+}
+
+h1{
+  font-size: 32px;
+}
+h2{
+  font-size: 24px;
+}
+h3{
+  font-size: 18px;
+}
+.bg-quill-editor .ql-editor{
+  background-color: gainsboro !important 
+}
+
+@media print {
+  body * {
+    visibility: hidden;
   }
-  33% {
-    transform: translate(30px, -50px) scale(1.1);
+
+  #printArea, 
+  #printArea * {
+    visibility: visible;
   }
-  66% {
-    transform: translate(-20px, 20px) scale(0.9);
-  }
-  100% {
-    transform: translate(0px, 0px) scale(1);
+
+  #printArea {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
   }
 }

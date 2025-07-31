@@ -25,7 +25,7 @@ type ComboBoxProps = {
   customeHeight?: boolean;
 };
 
-const index = ({
+const ComboBox = ({
   onChange,
   onClose,
   disabled,
@@ -117,4 +117,4 @@ const index = ({
   );
 };
 
-export default index;
+export default ComboBox;

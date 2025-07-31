@@ -22,7 +22,9 @@ export const previewCustomCssSlice = createSlice({
       Object.assign(state, action.payload); // อัปเดตเฉพาะค่าที่ส่งมา
     },
     setIntCustomCss: (state) => {
-      state = initialState; // รีเซ็ตค่าเป็นค่าเริ่มต้น
+      // รีเซ็ตค่าเป็นค่าเริ่มต้น โดยกำหนดค่าแต่ละ property
+      state.customCssURL = initialState.customCssURL;
+      state.customCss = initialState.customCss;
     },
   },
 });

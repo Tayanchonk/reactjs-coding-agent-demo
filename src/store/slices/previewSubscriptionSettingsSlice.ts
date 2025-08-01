@@ -56,7 +56,23 @@ export const previewSubscriptionSettingsSlice = createSlice({
       Object.assign(state, action.payload); // อัปเดตเฉพาะค่าที่ส่งมา
     },
     setIntSubscriptionSettings: (state) => {
-      state = initialState; // รีเซ็ตค่าเป็นค่าเริ่มต้น
+      // รีเซ็ตค่าเป็นค่าเริ่มต้น โดยกำหนดค่าแต่ละ property
+      state.subScriptionSettingsShow = initialState.subScriptionSettingsShow;
+      state.subscriptionTitle = initialState.subscriptionTitle;
+      state.subScribeAllShow = initialState.subScribeAllShow;
+      state.subscribeAllLabel = initialState.subscribeAllLabel;
+      state.unSubscribeAllShow = initialState.unSubscribeAllShow;
+      state.unSubscribeAllLabel = initialState.unSubscribeAllLabel;
+      state.unSubscribeReasonShow = initialState.unSubscribeReasonShow;
+      state.trigerUnSubscribeReason = initialState.trigerUnSubscribeReason;
+      state.unSubscribeReasonTitle = initialState.unSubscribeReasonTitle;
+      state.unSubscribeReasonTitleDescription = initialState.unSubscribeReasonTitleDescription;
+      state.unSubscribeReasonLabelButton = initialState.unSubscribeReasonLabelButton;
+      state.unSubscribeReasonFontSize = initialState.unSubscribeReasonFontSize;
+      state.unSubscribeReasonFontColor = initialState.unSubscribeReasonFontColor;
+      state.unSubscribeReasonBackgroundColor = initialState.unSubscribeReasonBackgroundColor;
+      state.unSubscribeReason = initialState.unSubscribeReason;
+      state.unSubscribeReasonRequired = initialState.unSubscribeReasonRequired;
     },
   },
 });
